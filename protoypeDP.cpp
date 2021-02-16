@@ -57,3 +57,17 @@ list<Shape*> getList(){
 return Alist;
 }
 };
+
+// int main(){
+
+// Shape* e = new Rectangle; // user choose shape
+// Shape* d = new Circle; // user choose shape
+
+// ShapeHolder* s = new ShapeHolder;
+// s->addAcopy(e);
+// s->addAcopy(d);
+// cout<<"size of list:"<<s->getList().size()<<endl;
+// forEach(s->getList().begin(),s->getList().end(), [](Shape* l){l->getDescription();});
+
+//    return 0;
+// }
