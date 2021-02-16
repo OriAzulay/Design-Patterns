@@ -61,27 +61,27 @@ class weaponFactory{
     }
 };
 
-int main(){
-weaponFactory* f = new weaponFactory();
-bool b = true;
-int i;
-string m;
-while(b){
-cout<<"Choose your weapon: \n 1.Hammer\n 2.Bow \n 3.out"<<endl;
-cin>>i;
-switch (i)
-{
-case 1:
-    m = "Hammer";
-    break;
-case 2:
-    m = "Bow";
-    break;
-case 3:
-    b = false;
-}
-Weapon* x = f->createWeapon(m);
-x->weaponType();
-}
-return 0;
-}
+// int main(){
+//     weaponFactory* f = new weaponFactory();
+//     bool b = true;
+//     int i;
+//     string m;
+//     while(b){
+//     cout<<"Choose your weapon: \n 1.Hammer\n 2.Bow \n 3.out"<<endl;
+//     cin>>i;
+//     switch (i)
+//     {
+//     case 1:
+//         m = "Hammer";
+//         break;
+//     case 2:
+//         m = "Bow";
+//         break;
+//     case 3:
+//         b = false;
+//     }
+//     Weapon* x = f->createWeapon(m);
+//     x->weaponType();
+//     }
+//     return 0;
+//     }
