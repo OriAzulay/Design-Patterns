@@ -12,7 +12,7 @@ public:
     virtual void update(const char *course) = 0;
 };
 
-class Subject {
+class ControllPanel {
 protected:
     vector<Observer *> observers;
 public:
@@ -32,7 +32,7 @@ public:
                 o->update(course);
     }
 };
-class RADAR:public Subject{
+class RADAR:public ControllPanel{
 bool threat;
 public:
 RADAR(){
