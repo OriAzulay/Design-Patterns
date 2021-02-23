@@ -9,52 +9,52 @@ using namespace std;
 
 
 
-class Weapon{
+class Missle{
     public:
-    virtual void weaponType()=0;
+    virtual void missleType()=0;
 };
 
-class SledgeHammer:public Weapon{
+class Explosion:public Missle{
     public:
-    virtual void weaponType(){
-        cout << "you got hammered"<<endl;
+    virtual void missleType(){
+        cout << "The missle impact near the target! "<<endl;
     }
 };
 
-class Bow:public Weapon{
+class HeadOn:public Missle{
     public:
-    virtual void weaponType(){
-        cout<<"you got an arrow in the knee"<<endl;
+    virtual void missleType(){
+        cout<<"The missle impact Head-On!"<<endl;
     }
 };
 
 class Creator
 {
 public:
-    virtual Weapon* create() = 0;
+    virtual Missle* create() = 0;
 };
 
-class HammerCreator:public Creator{
-    virtual Weapon* create(){
-        return new SledgeHammer();
+class ExplosionCreator:public Creator{
+    virtual Missle* create(){
+        return new Explosion();
     }
 };
 
-class BowCreator:public Creator{
-    virtual Weapon *create(){
-        return new Bow();
+class HeadOnCreator:public Creator{
+    virtual Missle* create(){
+        return new HeadOn();
     }
 };
 
-class weaponFactory{
-    unordered_map<string, Creator *> weapons;
+class missleFactory{
+    unordered_map<string, Creator *> missles;
     public:
-    weaponFactory(){
-        weapons["Bow"] = new BowCreator();
-        weapons["Hammer"] = new HammerCreator();
+    missleFactory(){
+        missles["head-on"] = new HeadOnCreator();
+        missles["explosion"] = new ExplosionCreator();
     }
-    Weapon* createWeapon(string name){
-        Creator* c = weapons[name];
+    Missle* createMissle(string name){
+        Creator* c = missles[name];
         if (c != nullptr)
             return c->create();
         return nullptr;
@@ -62,25 +62,25 @@ class weaponFactory{
 };
 
 // int main(){
-//     weaponFactory* f = new weaponFactory();
+//    missleFactory* f = new missleFactory();
 //     bool b = true;
 //     int i;
 //     string m;
 //     while(b){
-//     cout<<"Choose your weapon: \n 1.Hammer\n 2.Bow \n 3.out"<<endl;
+//     cout<<"Choose your type of impact: \n 1.Explosion\n 2.Head-on \n 3.out"<<endl;
 //     cin>>i;
 //     switch (i)
 //     {
 //     case 1:
-//         m = "Hammer";
+//         m = "head-on";
 //         break;
 //     case 2:
-//         m = "Bow";
+//         m = "explosion";
 //         break;
 //     case 3:
 //         b = false;
 //     }
-//     Weapon* x = f->createWeapon(m);
+//     missles* x = f->createMissle(m);
 //     x->weaponType();
 //     }
 //     return 0;
