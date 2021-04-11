@@ -59,6 +59,18 @@ class fromStudent2Employee : Employee{ //adapter
     string getName(){return usname;}
 };
 
+/**Main:
+ int main(){
+    youngPerson* yp = new youngPerson("Ori");
+    oldPerson* op = new oldPerson("Azulay");
+    yp->learning();
+    op->working();
+
+    fromStudent2Employee* adapt = new fromStudent2Employee(yp);
+    adapt->working();
+    return 0;
+};
+ */
 
 
 
