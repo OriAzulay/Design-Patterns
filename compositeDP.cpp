@@ -61,3 +61,20 @@ class Architect : public Worker{
 };
 //+++++++++++++++++++++++++++++++++++++++++++
 
+/**
+int main(){
+   Worker *c = new Manager("Haim");
+   Worker *c1 = new Manager("Omer");
+   Worker *c2 = new Manager("Yoav");
+   Worker *l = new Enginerr("Liran");
+   Worker *l1 = new Enginerr("Elad");
+   Worker *l2 = new Architect("Amir");
+   c->Add(c1);
+   c->Add(c2);
+   c1->Add(l);
+   c1->Add(l1);
+   c2->Add(l1);
+   c->getChild();
+   return 0;
+}
+**/
