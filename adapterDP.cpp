@@ -65,7 +65,7 @@ class fromStudent2Employee : Employee{ //adapter
     oldPerson* op = new oldPerson("Azulay");
     yp->learning();
     op->working();
-
+    //adaption
     fromStudent2Employee* adapt = new fromStudent2Employee(yp);
     adapt->working();
     return 0;
