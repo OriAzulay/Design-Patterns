@@ -2,6 +2,11 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+#include <iterator> 
+#include <list>
 using namespace std;
 
 
@@ -26,9 +31,11 @@ class familyPizza : public Pizza{
 class Decorator : public Pizza{
 protected:
     Pizza* _pizza;
+    vector<Pizza*> p; //
 public:
     virtual string getDescription()=0;
 };
+
 
 class MushroomTop: public Decorator{
     public:
@@ -50,3 +57,8 @@ class MozzarellaTop: public Decorator{
     }
 };
 
+// int main(){
+//     Pizza* newPizza = new MushroomTop(new MozzarellaTop(new personalPizza()));
+//     cout<< newPizza->getDescription()<<endl;
+//     return 0;
+// };
